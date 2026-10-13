@@ -1,0 +1,288 @@
+{
+  "dataset": {
+    "rows": 705,
+    "columns_count": 13,
+    "columns": [
+      {
+        "name": "Student_ID",
+        "type": "integer",
+        "role": "identifier",
+        "missing": 0,
+        "unique": 705
+      },
+      {
+        "name": "Age",
+        "type": "integer",
+        "role": "numerical",
+        "missing": 0,
+        "unique": 7
+      },
+      {
+        "name": "Gender",
+        "type": "text",
+        "role": "categorical",
+        "missing": 0,
+        "unique": 2
+      },
+      {
+        "name": "Academic_Level",
+        "type": "text",
+        "role": "categorical",
+        "missing": 0,
+        "unique": 3
+      },
+      {
+        "name": "Country",
+        "type": "text",
+        "role": "categorical",
+        "missing": 0,
+        "unique": 110
+      },
+      {
+        "name": "Avg_Daily_Usage_Hours",
+        "type": "decimal",
+        "role": "numerical",
+        "missing": 0,
+        "unique": 67
+      },
+      {
+        "name": "Most_Used_Platform",
+        "type": "text",
+        "role": "categorical",
+        "missing": 0,
+        "unique": 12
+      },
+      {
+        "name": "Affects_Academic_Performance",
+        "type": "text",
+        "role": "categorical",
+        "missing": 0,
+        "unique": 2
+      },
+      {
+        "name": "Sleep_Hours_Per_Night",
+        "type": "decimal",
+        "role": "numerical",
+        "missing": 0,
+        "unique": 59
+      },
+      {
+        "name": "Mental_Health_Score",
+        "type": "integer",
+        "role": "numerical",
+        "missing": 0,
+        "unique": 6
+      },
+      {
+        "name": "Relationship_Status",
+        "type": "text",
+        "role": "categorical",
+        "missing": 0,
+        "unique": 3
+      },
+      {
+        "name": "Conflicts_Over_Social_Media",
+        "type": "integer",
+        "role": "numerical",
+        "missing": 0,
+        "unique": 6
+      },
+      {
+        "name": "Addicted_Score",
+        "type": "integer",
+        "role": "numerical",
+        "missing": 0,
+        "unique": 8
+      }
+    ]
+  },
+  "preprocessing": {
+    "rows_original": 705,
+    "rows_after_cleaning": 705,
+    "missing_total": 0,
+    "duplicate_rows": 0,
+    "duplicate_ids": 0,
+    "cleaning_steps": [
+      "Created an unchanged copy of the data (df_original) before any change",
+      "Removed extra spaces from column names",
+      "Removed leading and trailing spaces from text values",
+      "Re-checked the dataset after cleaning"
+    ],
+    "outlier_method": "IQR rule: values below Q1 - 1.5 x IQR or above Q3 + 1.5 x IQR are flagged as potential outliers",
+    "outlier_summary": [
+      {
+        "column": "Age",
+        "lower": 14.5,
+        "upper": 26.5,
+        "count": 0,
+        "rows": []
+      },
+      {
+        "column": "Avg_Daily_Usage_Hours",
+        "lower": 1.55,
+        "upper": 8.35,
+        "count": 3,
+        "rows": [
+          {
+            "Student_ID": 7,
+            "Age": 23,
+            "Gender": "Male",
+            "Academic_Level": "Graduate",
+            "Country": "Germany",
+            "Avg_Daily_Usage_Hours": 1.5,
+            "Most_Used_Platform": "LinkedIn",
+            "Affects_Academic_Performance": "No",
+            "Sleep_Hours_Per_Night": 8.0,
+            "Mental_Health_Score": 9,
+            "Relationship_Status": "Single",
+            "Conflicts_Over_Social_Media": 0,
+            "Addicted_Score": 2
+          },
+          {
+            "Student_ID": 487,
+            "Age": 20,
+            "Gender": "Female",
+            "Academic_Level": "Undergraduate",
+            "Country": "USA",
+            "Avg_Daily_Usage_Hours": 8.4,
+            "Most_Used_Platform": "TikTok",
+            "Affects_Academic_Performance": "Yes",
+            "Sleep_Hours_Per_Night": 3.9,
+            "Mental_Health_Score": 5,
+            "Relationship_Status": "In Relationship",
+            "Conflicts_Over_Social_Media": 4,
+            "Addicted_Score": 9
+          },
+          {
+            "Student_ID": 497,
+            "Age": 19,
+            "Gender": "Female",
+            "Academic_Level": "Undergraduate",
+            "Country": "USA",
+            "Avg_Daily_Usage_Hours": 8.5,
+            "Most_Used_Platform": "Instagram",
+            "Affects_Academic_Performance": "Yes",
+            "Sleep_Hours_Per_Night": 3.8,
+            "Mental_Health_Score": 5,
+            "Relationship_Status": "In Relationship",
+            "Conflicts_Over_Social_Media": 4,
+            "Addicted_Score": 9
+          }
+        ]
+      },
+      {
+        "column": "Sleep_Hours_Per_Night",
+        "lower": 3.45,
+        "upper": 10.25,
+        "count": 0,
+        "rows": []
+      },
+      {
+        "column": "Mental_Health_Score",
+        "lower": 2.0,
+        "upper": 10.0,
+        "count": 0,
+        "rows": []
+      },
+      {
+        "column": "Conflicts_Over_Social_Media",
+        "lower": -1.0,
+        "upper": 7.0,
+        "count": 0,
+        "rows": []
+      },
+      {
+        "column": "Addicted_Score",
+        "lower": 0.5,
+        "upper": 12.5,
+        "count": 0,
+        "rows": []
+      }
+    ],
+    "outlier_decision": "Every flagged value was inspected. Each is physically possible and consistent with the rest of its row, so all were kept. No rows were removed."
+  },
+  "categorical_counts": {
+    "Gender": {
+      "Female": 353,
+      "Male": 352
+    },
+    "Academic_Level": {
+      "Undergraduate": 353,
+      "Graduate": 325,
+      "High School": 27
+    },
+    "Most_Used_Platform": {
+      "Instagram": 249,
+      "TikTok": 154,
+      "Facebook": 123,
+      "WhatsApp": 54,
+      "Twitter": 30,
+      "LinkedIn": 21,
+      "WeChat": 15,
+      "Snapchat": 13,
+      "VKontakte": 12,
+      "LINE": 12,
+      "KakaoTalk": 12,
+      "YouTube": 10
+    },
+    "Affects_Academic_Performance": {
+      "Yes": 453,
+      "No": 252
+    },
+    "Relationship_Status": {
+      "Single": 384,
+      "In Relationship": 289,
+      "Complicated": 32
+    }
+  },
+  "correlations": {
+    "Age": {
+      "Age": 1.0,
+      "Avg_Daily_Usage_Hours": -0.114,
+      "Sleep_Hours_Per_Night": 0.125,
+      "Mental_Health_Score": 0.16,
+      "Conflicts_Over_Social_Media": -0.184,
+      "Addicted_Score": -0.166
+    },
+    "Avg_Daily_Usage_Hours": {
+      "Age": -0.114,
+      "Avg_Daily_Usage_Hours": 1.0,
+      "Sleep_Hours_Per_Night": -0.791,
+      "Mental_Health_Score": -0.801,
+      "Conflicts_Over_Social_Media": 0.805,
+      "Addicted_Score": 0.832
+    },
+    "Sleep_Hours_Per_Night": {
+      "Age": 0.125,
+      "Avg_Daily_Usage_Hours": -0.791,
+      "Sleep_Hours_Per_Night": 1.0,
+      "Mental_Health_Score": 0.707,
+      "Conflicts_Over_Social_Media": -0.677,
+      "Addicted_Score": -0.765
+    },
+    "Mental_Health_Score": {
+      "Age": 0.16,
+      "Avg_Daily_Usage_Hours": -0.801,
+      "Sleep_Hours_Per_Night": 0.707,
+      "Mental_Health_Score": 1.0,
+      "Conflicts_Over_Social_Media": -0.894,
+      "Addicted_Score": -0.945
+    },
+    "Conflicts_Over_Social_Media": {
+      "Age": -0.184,
+      "Avg_Daily_Usage_Hours": 0.805,
+      "Sleep_Hours_Per_Night": -0.677,
+      "Mental_Health_Score": -0.894,
+      "Conflicts_Over_Social_Media": 1.0,
+      "Addicted_Score": 0.934
+    },
+    "Addicted_Score": {
+      "Age": -0.166,
+      "Avg_Daily_Usage_Hours": 0.832,
+      "Sleep_Hours_Per_Night": -0.765,
+      "Mental_Health_Score": -0.945,
+      "Conflicts_Over_Social_Media": 0.934,
+      "Addicted_Score": 1.0
+    }
+  }
+}
