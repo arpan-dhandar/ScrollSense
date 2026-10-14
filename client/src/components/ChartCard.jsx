@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_URL } from "../api/config.js";
 
 export default function ChartCard({ file, title, variables, shows, interpretation, limits }) {
     const [failed, setFailed] = useState(false);
@@ -9,14 +10,14 @@ export default function ChartCard({ file, title, variables, shows, interpretatio
             <p className="muted small">Variables: {variables}</p>
             {failed ? (
                 <p className="notice warn" role="alert">
-                    The image <code>{file}</code> could not be loaded. Check <code>data/exports/charts</code>.
+                    The image <code>{file}</code> could not be loaded. Check <code>data/exports/charts</code> and that the
+                    server is running.
                 </p>
             ) : (
                 <img
                     className="chart-img"
-                    src={`/charts/${file}`}
+                    src={`${API_URL}/charts/${file}`}
                     alt={title}
-                    loading="lazy"
                     decoding="async"
                     onError={() => setFailed(true)}
                 />

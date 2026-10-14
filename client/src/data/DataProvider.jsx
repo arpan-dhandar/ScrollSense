@@ -1,10 +1,14 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { DataContext } from "./dataContext.js";
+import { API_URL } from "../api/config.js";
 
-async function get(url) {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(url);
-    return res.json();
+async function get(path) {
+    const res = await fetch(`${API_URL}${path}`);
+    if (!res.ok) throw new Error(path);
+    const json = await res.json();
+    // The backend wraps responses in { success, data }.
+    // Unwrap so existing components keep working unchanged.
+    return json.data !== undefined ? json.data : json;
 }
 
 export default function DataProvider({ children }) {

@@ -1,17 +1,28 @@
 {
-  "name": "server",
+  "name": "scrollsense-server",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "description": "ScrollSense Express.js API server",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --forceExit --detectOpenHandles",
+    "test:watch": "node --experimental-vm-modules node_modules/.bin/jest --watch",
+    "lint": "echo \"Add eslint when needed\""
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": "Arpan Dhandar",
+  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.6",
-    "express": "^5.3.0"
+    "dotenv": "^16.5.0",
+    "express": "^5.3.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.1.0"
   }
 }

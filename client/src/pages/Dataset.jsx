@@ -3,7 +3,7 @@ import DataGate from "../components/DataGate.jsx";
 import DetailsNotice from "../components/DetailsNotice.jsx";
 import StatCard from "../components/StatCard.jsx";
 import { useData } from "../data/dataContext.js";
-import { SOURCE } from "../config.js";
+import { SOURCE } from "../constants/siteConfig.js";
 import { fmt } from "../utils/format.js";
 
 function Body() {

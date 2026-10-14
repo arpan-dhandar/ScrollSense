@@ -75,11 +75,14 @@ function Body() {
     ];
 
     return (
-        <div className="chart-grid">
-            {charts.map((c) => (
-                <ChartCard key={c.file} {...c} />
-            ))}
-        </div>
+        <>
+            <p className="notice ok" role="status">Showing {charts.length} charts from the Python analysis.</p>
+            <div className="chart-grid">
+                {charts.map((c) => (
+                    <ChartCard key={c.file} {...c} />
+                ))}
+            </div>
+        </>
     );
 }
 

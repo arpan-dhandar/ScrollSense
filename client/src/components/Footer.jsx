@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { NAV_LINKS, SOURCE } from "../config.js";
+import { NAV_LINKS, SOURCE } from "../constants/siteConfig.js";
 
 export default function Footer() {
     return (
